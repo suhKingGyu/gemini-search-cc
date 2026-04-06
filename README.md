@@ -30,7 +30,7 @@ Automatically intercepts package manager commands (`npm install`, `pip install`,
 
 ### Session Lifecycle
 
-The plugin checks Gemini CLI availability and auth status at session start.
+The plugin checks Gemini CLI availability at session start. Run `/gemini:setup` to verify authentication.
 
 ---
 
@@ -97,12 +97,11 @@ gemini login
 
 ### Via Marketplace (recommended)
 
-```bash
-# Add the marketplace
-claude /plugin marketplace add suhKingGyu/gemini-search-cc
+Inside Claude Code, run these slash commands:
 
-# Install the plugin
-claude /plugin install gemini@gemini-search
+```
+/plugin marketplace add suhKingGyu/gemini-search-cc
+/plugin install gemini@gemini-search
 ```
 
 ### Via --plugin-dir (development)

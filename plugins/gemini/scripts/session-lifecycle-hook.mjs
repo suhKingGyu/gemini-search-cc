@@ -8,9 +8,7 @@
  * SessionEnd   — placeholder for future cleanup.
  */
 
-import { appendFileSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
-import { homedir } from 'node:os';
+import { appendFileSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import { isGeminiInstalled, getGeminiVersion } from './lib/gemini.mjs';
 
@@ -40,20 +38,10 @@ if (event === 'SessionStart') {
   const installed = isGeminiInstalled();
   if (installed) {
     const version = getGeminiVersion();
-    const hasCredentials = existsSync(join(homedir(), '.gemini', 'oauth_creds.json'));
-    if (hasCredentials) {
-      const skills = [
-        'search', 'research', 'audit',
-        'fact-check', 'changelog', 'compare',
-      ].map(s => `/gemini:${s}`).join(', ');
-      const msg = `[Gemini plugin] Ready — Gemini CLI ${version || '(unknown)'} | ${skills}`;
-      console.log(JSON.stringify({ type: 'notification', message: msg }));
-    } else {
-      console.log(JSON.stringify({
-        type: 'notification',
-        message: `[Gemini plugin] Gemini CLI ${version || '(unknown)'} found but not authenticated. Run \`gemini login\`.`,
-      }));
-    }
+    // Note: we cannot run a real auth probe here (5s hook timeout).
+    // Report CLI presence only; auth is verified on first actual use or via /gemini:setup.
+    const msg = `[Gemini plugin] Gemini CLI ${version || '(unknown)'} found. Run /gemini:setup to verify auth.`;
+    console.log(JSON.stringify({ type: 'notification', message: msg }));
   } else {
     console.log(JSON.stringify({
       type: 'notification',
