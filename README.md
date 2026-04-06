@@ -97,12 +97,16 @@ gemini login
 
 ### Via Marketplace (recommended)
 
-Inside Claude Code, run these slash commands:
+1. Start Claude Code:
+   ```bash
+   claude
+   ```
 
-```
-/plugin marketplace add suhKingGyu/gemini-search-cc
-/plugin install gemini@gemini-search
-```
+2. Inside the Claude Code session, run:
+   ```
+   /plugin marketplace add suhKingGyu/gemini-search-cc
+   /plugin install gemini@gemini-search
+   ```
 
 ### Via --plugin-dir (development)
 
