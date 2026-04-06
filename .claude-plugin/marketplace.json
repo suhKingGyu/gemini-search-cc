@@ -1,0 +1,21 @@
+{
+  "name": "gemini-search",
+  "owner": {
+    "name": "suhKingGyu"
+  },
+  "metadata": {
+    "description": "Real-time Google Search & deep research plugins for Claude Code, powered by Gemini CLI.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "gemini",
+      "description": "Real-time Google Search, fact-checking, changelog tracking & deep research for Claude Code — powered by Gemini CLI.",
+      "version": "0.1.0",
+      "author": {
+        "name": "suhKingGyu"
+      },
+      "source": "./plugins/gemini"
+    }
+  ]
+}

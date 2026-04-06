@@ -1,0 +1,11 @@
+Gemini Search for Claude Code (gemini-search-cc)
+Copyright 2026 suhKingGyu
+
+This product uses the Gemini CLI (https://github.com/google-gemini/gemini-cli),
+licensed under the Apache License 2.0, Copyright Google.
+
+Plugin architecture inspired by codex-plugin-cc
+(https://github.com/openai/codex-plugin-cc),
+licensed under the Apache License 2.0, Copyright OpenAI.
+
+Built on the Claude Code plugin system by Anthropic.

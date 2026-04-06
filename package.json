@@ -1,0 +1,31 @@
+{
+  "name": "gemini-search-cc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Real-time Google Search, fact-checking, changelog tracking & deep research plugin for Claude Code — powered by Gemini CLI.",
+  "license": "Apache-2.0",
+  "author": "suhKingGyu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suhKingGyu/gemini-search-cc.git"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "gemini",
+    "search",
+    "google-search",
+    "grounded-search",
+    "deep-research",
+    "plugin"
+  ],
+  "scripts": {
+    "lint": "node --check plugins/gemini/scripts/gemini-companion.mjs plugins/gemini/scripts/session-lifecycle-hook.mjs plugins/gemini/scripts/lib/gemini.mjs plugins/gemini/scripts/lib/render.mjs plugins/gemini/scripts/lib/workspace.mjs plugins/gemini/hooks/guard-filter.mjs",
+    "test": "npm run lint && node --test tests/*.test.mjs",
+    "test:integration": "node plugins/gemini/scripts/gemini-companion.mjs setup --json && node plugins/gemini/scripts/gemini-companion.mjs search test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

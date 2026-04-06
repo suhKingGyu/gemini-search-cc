@@ -1,0 +1,11 @@
+{
+  "name": "gemini",
+  "version": "0.1.0",
+  "description": "Real-time Google Search, fact-checking, changelog tracking & deep research for Claude Code — powered by Gemini CLI.",
+  "author": {
+    "name": "suhKingGyu"
+  },
+  "repository": "https://github.com/suhKingGyu/gemini-search-cc",
+  "license": "Apache-2.0",
+  "keywords": ["search", "google-search", "gemini", "fact-check", "audit", "research"]
+}
