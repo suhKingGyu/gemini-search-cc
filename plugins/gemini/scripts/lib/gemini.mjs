@@ -34,13 +34,13 @@ export function getGeminiVersion() {
 
 /**
  * Verify Gemini auth is actually valid by running a minimal headless probe.
- * Slower (~15s) but catches expired tokens that file-check misses.
+ * Gemini CLI cold starts can be slow, so we allow up to 60s.
  */
 export function isGeminiAuthValid() {
   try {
     execSync('gemini -p "ping" -o json', {
       encoding: 'utf-8',
-      timeout: 15_000,
+      timeout: 60_000,
       stdio: ['ignore', 'pipe', 'pipe'],
     });
     return true;
@@ -81,12 +81,12 @@ export function parseGeminiOutput(str) {
  * Uses -o json to get structured output.
  * @param {string} query - The search query.
  * @param {object} [opts]
- * @param {number} [opts.timeout=120000] - Timeout in ms (default 2 min).
+ * @param {number} [opts.timeout=180000] - Timeout in ms (default 3 min).
  * @param {boolean} [opts.searchHint=true] - Prepend a hint to use Google Search.
  * @returns {Promise<{ok: boolean, output: string, error?: string, exitCode?: number, stats?: object}>}
  */
 export async function geminiSearch(query, opts = {}) {
-  const { timeout = 120_000, searchHint = true } = opts;
+  const { timeout = 180_000, searchHint = true } = opts;
 
   const prompt = searchHint
     ? `Use Google Search to find up-to-date information. ${query}`
@@ -160,11 +160,11 @@ export async function geminiSearch(query, opts = {}) {
  * Execute a Gemini deep research query (longer timeout, richer prompt).
  * @param {string} query
  * @param {object} [opts]
- * @param {number} [opts.timeout=300000] - Timeout in ms (default 5 min).
+ * @param {number} [opts.timeout=600000] - Timeout in ms (default 10 min).
  * @returns {Promise<{ok: boolean, output: string, error?: string, exitCode?: number, stats?: object}>}
  */
 export async function geminiResearch(query, opts = {}) {
-  const { timeout = 300_000 } = opts;
+  const { timeout = 600_000 } = opts;
 
   const researchPrompt = [
     'You are a deep research assistant. Perform a thorough, multi-step investigation.',
@@ -188,7 +188,7 @@ export async function geminiResearch(query, opts = {}) {
  * @returns {Promise<{ok: boolean, output: string, error?: string, exitCode?: number, stats?: object}>}
  */
 export async function geminiFactCheck(claim, opts = {}) {
-  const { timeout = 120_000 } = opts;
+  const { timeout = 180_000 } = opts;
 
   const prompt = [
     'You are a technical fact-checker. Verify the following claim using Google Search.',
@@ -215,7 +215,7 @@ export async function geminiFactCheck(claim, opts = {}) {
  * @returns {Promise<{ok: boolean, output: string, error?: string, exitCode?: number, stats?: object}>}
  */
 export async function geminiChangelog(pkg, opts = {}) {
-  const { timeout = 120_000 } = opts;
+  const { timeout = 180_000 } = opts;
 
   const prompt = [
     `Search for the latest release notes and changelog for: ${pkg}`,
@@ -249,7 +249,7 @@ export async function geminiChangelog(pkg, opts = {}) {
  * @returns {Promise<{ok: boolean, output: string, error?: string, exitCode?: number, stats?: object}>}
  */
 export async function geminiCompare(query, opts = {}) {
-  const { timeout = 180_000 } = opts;
+  const { timeout = 300_000 } = opts;
 
   const prompt = [
     `Compare the following technologies using current (2025-2026) data: ${query}`,

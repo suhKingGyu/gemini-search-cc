@@ -86,7 +86,7 @@ async function main() {
         'Provide a structured report with severity levels (Critical/High/Medium/Low).',
       ].join('\n');
 
-      const result = await geminiSearch(auditPrompt, { timeout: 180_000 });
+      const result = await geminiSearch(auditPrompt, { timeout: 300_000 });
       if (result.ok) {
         console.log(renderReport({ query, output: result.output, mode: 'audit', stats: result.stats }));
       } else {
