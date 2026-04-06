@@ -1,6 +1,6 @@
 {
   "name": "gemini-search-cc",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "Real-time Google Search, fact-checking, changelog tracking & deep research plugin for Claude Code — powered by Gemini CLI.",
