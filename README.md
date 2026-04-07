@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Bring Gemini's **grounded Google Search** capabilities directly into [Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview). This plugin turns Claude Code into a search-augmented coding assistant — bridging Claude's knowledge cutoff with real-time, cited web information.
+Bring Gemini's **grounded Google Search** capabilities directly into [Claude Code](https://code.claude.com/docs). This plugin turns Claude Code into a search-augmented coding assistant — bridging Claude's knowledge cutoff with real-time, cited web information.
 
 ---
 
@@ -81,8 +81,8 @@ gemini-search-cc/
 
 > **Platform**: macOS and Linux. Windows is not officially supported by Gemini CLI.
 
-1. **Claude Code** — The `claude` CLI ([docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview))
-2. **Gemini CLI** — Must be installed and authenticated ([github.com/google/gemini-cli](https://github.com/google/gemini-cli))
+1. **Claude Code** — The `claude` CLI ([docs](https://code.claude.com/docs))
+2. **Gemini CLI** — Must be installed and authenticated ([github.com/google/gemini-cli](https://github.com/google-gemini/gemini-cli))
 3. **Node.js** >= 18.0.0
 
 ```bash
