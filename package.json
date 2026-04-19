@@ -5,10 +5,10 @@
   "type": "module",
   "description": "Real-time Google Search, fact-checking, changelog tracking & deep research plugin for Claude Code — powered by Gemini CLI.",
   "license": "Apache-2.0",
-  "author": "suhKingGyu",
+  "author": "KingGyuSuh",
   "repository": {
     "type": "git",
-    "url": "https://github.com/suhKingGyu/gemini-search-cc.git"
+    "url": "https://github.com/KingGyuSuh/gemini-search-cc.git"
   },
   "keywords": [
     "claude",
