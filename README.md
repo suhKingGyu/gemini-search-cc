@@ -104,7 +104,7 @@ gemini login
 
 2. Inside the Claude Code session, run:
    ```
-   /plugin marketplace add suhKingGyu/gemini-search-cc
+   /plugin marketplace add KingGyuSuh/gemini-search-cc
    /plugin install gemini@gemini-search
    ```
 
