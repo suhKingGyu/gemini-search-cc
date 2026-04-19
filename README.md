@@ -1,6 +1,6 @@
 # Gemini Search for Claude Code (gemini-search-cc)
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![CI](https://github.com/KingGyuSuh/gemini-search-cc/actions/workflows/ci.yml/badge.svg)](https://github.com/KingGyuSuh/gemini-search-cc/actions) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Bring Gemini's **grounded Google Search** capabilities directly into [Claude Code](https://code.claude.com/docs). This plugin turns Claude Code into a search-augmented coding assistant — bridging Claude's knowledge cutoff with real-time, cited web information.
 
